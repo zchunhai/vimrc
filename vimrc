@@ -8,6 +8,8 @@ call vundle#begin()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Shougo/unite.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -16,6 +18,7 @@ filetype plugin indent on    " required
 
 " personal conf
 set background=dark
+set cursorline
 colorscheme solarized
 
 if (exists('+colorcolumn'))
@@ -39,3 +42,12 @@ let g:syntastic_mode_map = {
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+
+let NERDTreeWinPos = 'right'
+let NERDTreeWinSize = 26
+map tr :NERDTreeToggle<cr>
+
+map tb :Tagbar<cr>
+let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_width = 26
+let g:tagbar_left= 1

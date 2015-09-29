@@ -10,3 +10,5 @@ source ~/.vim/vimrc
 4. 安装插件syntastic
 5. 安装flacke8
    sudo pip install Flake8
+6. 安装nerdtree
+6. 安装tagbar
