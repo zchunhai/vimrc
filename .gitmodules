@@ -1,0 +1,3 @@
+[submodule "bundle/jshint.vim"]
+	path = bundle/jshint.vim
+	url = https://github.com/walm/jshint.vim.git
