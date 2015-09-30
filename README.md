@@ -15,3 +15,6 @@ source ~/.vim/vimrc
 8. 安装jshint
    npm install -g jshint
 9. 安装vim-javascript-syntax
+10. 安装tern_for_vim
+    cd ~/.vim/bundle/tern_for_vim
+    npm install
