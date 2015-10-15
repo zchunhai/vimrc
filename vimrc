@@ -25,12 +25,15 @@ filetype plugin indent on    " required
 
 
 " personal conf
-colorscheme evening
+let mapleader = "\<Space>"
+color desert
+set nu
 set cursorline
+hi CursorLine cterm=bold
 
 if (exists('+colorcolumn'))
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=9
+    set colorcolumn=120
+    highlight ColorColumn ctermbg=grey
 endif
 
 "" encodings configure
@@ -66,8 +69,8 @@ autocmd FileType ruby,eruby :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
 " unite conf
-nnoremap <space>f :<C-u>Unite -start-insert file<cr>
-nnoremap <space><space> :<C-u>Unite -start-insert file_rec<cr>
+nnoremap <leader>f :<C-u>Unite -start-insert file<cr>
+nnoremap <leader><space> :<C-u>Unite -start-insert file_rec<cr>
 
 " syntastic conf
 set statusline+=%#warningmsg#
@@ -81,11 +84,15 @@ let g:syntastic_mode_map = {
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
-map <F7> :SyntasticCheck<cr>
+"let g:syntastic_python_flake8_args = "--ignore=E501,E128"
+let g:syntastic_python_flake8_args = "--max-line-length=120"
+map <leader>c :SyntasticCheck<CR>
+map <leader>r :SyntasticReset<CR>
 
 let NERDTreeWinPos = 'right'
 let NERDTreeWinSize = 26
 map tr :NERDTreeToggle<cr>
+let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.gz$', '.*\.pyc', '.*\.gitignore', '.DS_Store']
 
 map tb :Tagbar<cr>
 let g:tagbar_ctags_bin = 'ctags'

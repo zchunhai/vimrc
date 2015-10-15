@@ -1,7 +1,13 @@
 # vimrc
 
 $ cat ~/.vimrc 
+git submodule update --init --recursive
 source ~/.vim/vimrc
+sudo pip install Flake8
+npm install -g jshint
+cd ~/.vim/bundle/tern_for_vim
+npm install
+:BundleInstall
 
 -------------
 1. 安装插件管理器 vundle
