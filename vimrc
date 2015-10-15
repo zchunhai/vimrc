@@ -18,6 +18,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'bling/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,13 +28,14 @@ filetype plugin indent on    " required
 " personal conf
 let mapleader = "\<Space>"
 color desert
+set t_Co=256
 set nu
 set cursorline
 hi CursorLine cterm=bold
 
 if (exists('+colorcolumn'))
     set colorcolumn=120
-    highlight ColorColumn ctermbg=grey
+    highlight ColorColumn ctermbg=gray
 endif
 
 "" encodings configure
@@ -73,10 +75,6 @@ nnoremap <leader>f :<C-u>Unite -start-insert file<cr>
 nnoremap <leader><space> :<C-u>Unite -start-insert file_rec<cr>
 
 " syntastic conf
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": [],
