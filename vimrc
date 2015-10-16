@@ -57,6 +57,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set incsearch
+hi IncSearch cterm=NONE ctermfg=NONE ctermbg=darkyellow
+hi Search cterm=NONE ctermfg=NONE ctermbg=darkyellow
 
 "" Cold Folding
 set foldmethod=indent
