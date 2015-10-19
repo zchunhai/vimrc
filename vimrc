@@ -50,6 +50,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set noswapfile
 
 "" set tabstop value and shift width
 set tabstop=4
