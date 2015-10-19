@@ -26,6 +26,7 @@ filetype plugin indent on    " required
 
 
 " personal conf
+syntax on
 let mapleader = "\<Space>"
 color desert
 set t_Co=256
@@ -109,3 +110,6 @@ vmap <space>=: :Tabularize /:\zs<CR>
 " for python
 Bundle 'hdima/python-syntax'
 let python_highlight_all = 1
+
+" for json
+let g:vim_json_warnings=0
