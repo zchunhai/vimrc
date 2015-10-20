@@ -60,8 +60,8 @@ set softtabstop=4
 set expandtab
 set hlsearch
 set incsearch
-hi IncSearch cterm=NONE ctermfg=NONE ctermbg=darkyellow
-hi Search cterm=NONE ctermfg=NONE ctermbg=darkyellow
+hi IncSearch cterm=NONE ctermfg=NONE ctermbg=darkgrey
+hi Search cterm=NONE ctermfg=NONE ctermbg=darkgrey
 
 "" Cold Folding
 set foldmethod=indent
@@ -72,6 +72,7 @@ autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType less :setlocal sw=2 ts=2 sts=2
 autocmd FileType coffee :setlocal sw=2 ts=2 sts=2
+autocmd FileType json :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby,eruby :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
