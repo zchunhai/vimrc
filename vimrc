@@ -90,6 +90,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 "let g:syntastic_python_flake8_args = "--ignore=E501,E128"
 let g:syntastic_python_flake8_args = "--max-line-length=120"
+let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
+let g:syntastic_coffee_coffeelint_args = "--file ~/.vim/coffeelint.json"
 map <leader>c :SyntasticCheck<CR>
 map <leader>r :SyntasticReset<CR>
 
@@ -114,3 +116,7 @@ let python_highlight_all = 1
 
 " for json
 let g:vim_json_warnings=0
+
+" for coffee
+vmap <leader>cc <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>cc :CoffeeCompile<CR>
