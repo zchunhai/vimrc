@@ -19,6 +19,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'bling/vim-airline'
+Bundle 'lukaszkorecki/CoffeeTags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

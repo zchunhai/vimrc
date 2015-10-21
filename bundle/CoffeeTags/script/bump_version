@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+readonly currentVersion=$(ruby -r ./lib/CoffeeTags/version.rb -e 'puts Coffeetags::VERSION')
+readonly newVersion=$1
+
+if [[ "$newVersion" == '' ]] ; then
+  echo "$(basename $0)  <new_version>"
+  echo "Current version: $currentVersion"
+  exit 1
+fi
+
+git grep "$currentVersion" | cut -d: -f1 | tee /dev/stderr | uniq | xargs sed -i "s/$currentVersion/$newVersion/g"
