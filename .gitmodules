@@ -46,3 +46,6 @@
 [submodule "bundle/CoffeeTags"]
 	path = bundle/CoffeeTags
 	url = https://github.com/lukaszkorecki/CoffeeTags.git
+[submodule "bundle/dustjs.vim"]
+	path = bundle/dustjs.vim
+	url = https://github.com/jimmyhchan/dustjs.vim.git

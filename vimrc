@@ -20,6 +20,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'bling/vim-airline'
 Bundle 'lukaszkorecki/CoffeeTags'
+Bundle 'jimmyhchan/dustjs.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
