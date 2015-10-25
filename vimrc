@@ -34,12 +34,15 @@ color desert
 set t_Co=256
 set nu
 set cursorline
-hi CursorLine cterm=bold
+"hi CursorLine cterm=bold
+" disable bold font
+set t_md=
 
 if (exists('+colorcolumn'))
     set colorcolumn=120
     highlight ColorColumn ctermbg=gray
 endif
+set colorcolumn=0
 
 "" encodings configure
 set fileencoding=utf-8
