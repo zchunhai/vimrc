@@ -33,7 +33,7 @@ let mapleader = "\<Space>"
 color desert
 set t_Co=256
 set nu
-set cursorline
+set nocursorline
 "hi CursorLine cterm=bold
 " disable bold font
 set t_md=
@@ -54,9 +54,17 @@ set fileformats=unix,dos,mac
 set wildmenu "Turn on WiLd menu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,*.rbc,*.class,.svn,test/fixtures/*,vendor/gems/*
-set wildignore+=*/node_modules/*
+set wildignore+=./node_modules/*
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-set noswapfile
+"set noswapfile
+set directory=$HOME/.vim/swapfiles//
+" reopening a file
+if has("autocmd")
+      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" make backspace work like most other apps
+set backspace=2
 
 "" set tabstop value and shift width
 set tabstop=4
@@ -78,6 +86,7 @@ autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType less :setlocal sw=2 ts=2 sts=2
 autocmd FileType coffee :setlocal sw=2 ts=2 sts=2
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
+autocmd FileType dust :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby,eruby :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
