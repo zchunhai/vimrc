@@ -17,9 +17,9 @@ Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'marijnh/tern_for_vim'
+"Bundle 'marijnh/tern_for_vim'
 Bundle 'bling/vim-airline'
-Bundle 'lukaszkorecki/CoffeeTags'
+"Bundle 'lukaszkorecki/CoffeeTags'
 Bundle 'jimmyhchan/dustjs.vim'
 
 " All of your Plugins must be added before the following line
@@ -37,6 +37,8 @@ set nocursorline
 "hi CursorLine cterm=bold
 " disable bold font
 set t_md=
+
+set t_ti= t_te=
 
 if (exists('+colorcolumn'))
     set colorcolumn=120
