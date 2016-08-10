@@ -40,6 +40,8 @@ set t_md=
 
 set t_ti= t_te=
 
+set laststatus=2
+
 if (exists('+colorcolumn'))
     set colorcolumn=120
     highlight ColorColumn ctermbg=gray
@@ -81,6 +83,7 @@ hi Search cterm=NONE ctermfg=NONE ctermbg=darkgrey
 "" Cold Folding
 set foldmethod=indent
 set foldlevelstart=100
+set foldlevel=99
 
 "" Define custom indentation for filetypes
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
