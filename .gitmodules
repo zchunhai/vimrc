@@ -43,3 +43,6 @@
 [submodule "bundle/dustjs.vim"]
 	path = bundle/dustjs.vim
 	url = https://github.com/jimmyhchan/dustjs.vim.git
+[submodule "bundle/accelerated-smooth-scroll"]
+	path = bundle/accelerated-smooth-scroll
+	url = https://github.com/yonchu/accelerated-smooth-scroll.git
