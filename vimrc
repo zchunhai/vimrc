@@ -21,6 +21,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'bling/vim-airline'
 "Bundle 'lukaszkorecki/CoffeeTags'
 Bundle 'jimmyhchan/dustjs.vim'
+Bundle 'yonchu/accelerated-smooth-scroll'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,6 +54,13 @@ set fileencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,latin1
 set fileformats=unix,dos,mac
+
+set ttymouse=xterm2
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>
 
 ""wildignore
 set wildmenu "Turn on WiLd menu
@@ -107,8 +115,7 @@ let g:syntastic_mode_map = {
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_flake8_args = "--ignore=E501,E128"
-let g:syntastic_python_flake8_args = "--max-line-length=120"
+let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
 let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
 let g:syntastic_coffee_coffeelint_args = "--file ~/.vim/coffeelint.json"
 map <leader>c :SyntasticCheck<CR>
