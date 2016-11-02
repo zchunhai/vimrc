@@ -56,7 +56,7 @@ set fileencodings=utf-8,latin1
 set fileformats=unix,dos,mac
 
 set ttymouse=xterm2
-set mouse=a
+set mouse=nv
 map <ScrollWheelUp> <C-Y>
 map <S-ScrollWheelUp> <C-U>
 map <ScrollWheelDown> <C-E>
