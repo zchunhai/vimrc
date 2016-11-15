@@ -91,12 +91,8 @@ set foldlevel=99
 
 "" Define custom indentation for filetypes
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
-autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 autocmd FileType less :setlocal sw=2 ts=2 sts=2
-autocmd FileType coffee :setlocal sw=2 ts=2 sts=2
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
-autocmd FileType dust :setlocal sw=2 ts=2 sts=2
-autocmd FileType ruby,eruby :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
 " unite conf
@@ -136,7 +132,3 @@ let python_highlight_all = 1
 
 " for json
 let g:vim_json_warnings=0
-
-" for coffee
-vmap <leader>cc <esc>:'<,'>:CoffeeCompile<CR>
-map <leader>cc :CoffeeCompile<CR>
