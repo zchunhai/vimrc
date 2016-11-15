@@ -4,9 +4,6 @@
 [submodule "bundle/python-syntax"]
 	path = bundle/python-syntax
 	url = https://github.com/hdima/python-syntax.git
-[submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -40,9 +37,9 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "bundle/dustjs.vim"]
-	path = bundle/dustjs.vim
-	url = https://github.com/jimmyhchan/dustjs.vim.git
 [submodule "bundle/accelerated-smooth-scroll"]
 	path = bundle/accelerated-smooth-scroll
 	url = https://github.com/yonchu/accelerated-smooth-scroll.git
+[submodule "tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = git@github.com:ternjs/tern_for_vim.git
