@@ -19,9 +19,6 @@
 [submodule "bundle/unite"]
 	path = bundle/unite
 	url = https://github.com/Shougo/unite.vim.git
-[submodule "bundle/vim-jade"]
-	path = bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "bundle/vim-javascript-syntax"]
 	path = bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
@@ -40,6 +37,3 @@
 [submodule "bundle/accelerated-smooth-scroll"]
 	path = bundle/accelerated-smooth-scroll
 	url = https://github.com/yonchu/accelerated-smooth-scroll.git
-[submodule "tern_for_vim"]
-	path = bundle/tern_for_vim
-	url = git@github.com:ternjs/tern_for_vim.git

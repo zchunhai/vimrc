@@ -15,7 +15,6 @@ Bundle 'moll/vim-node'
 Bundle 'walm/jshint.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'digitaltoad/vim-jade'
 "Bundle 'ternjs/tern_for_vim'
 Bundle 'bling/vim-airline'
 Bundle 'yonchu/accelerated-smooth-scroll'
@@ -113,8 +112,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
-let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
-let g:syntastic_coffee_coffeelint_args = "--file ~/.vim/coffeelint.json"
 map <leader>c :SyntasticCheck<CR>
 map <leader>r :SyntasticReset<CR>
 
