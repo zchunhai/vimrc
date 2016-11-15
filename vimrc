@@ -14,10 +14,16 @@ Bundle 'majutsushi/tagbar'
 Bundle 'moll/vim-node'
 Bundle 'walm/jshint.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'hdima/python-syntax'
 Bundle 'jelera/vim-javascript-syntax'
 "Bundle 'ternjs/tern_for_vim'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Bundle 'yonchu/accelerated-smooth-scroll'
+Bundle 'jnurmine/Zenburn'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+"Bundle 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -27,11 +33,19 @@ filetype plugin indent on    " required
 " personal conf
 syntax on
 let mapleader = "\<Space>"
-color desert
+"color desert
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+    call togglebg#map("<F5>")
+else
+    colorscheme zenburn
+endif
+
 set t_Co=256
 set nu
 set nocursorline
-"hi CursorLine cterm=bold
+hi cursorline cterm=bold
 " disable bold font
 set t_md=
 
@@ -39,11 +53,10 @@ set t_ti= t_te=
 
 set laststatus=2
 
-if (exists('+colorcolumn'))
-    set colorcolumn=120
-    highlight ColorColumn ctermbg=gray
-endif
-set colorcolumn=0
+" if (exists('+colorcolumn'))
+"     set colorcolumn=120
+"     highlight ColorColumn ctermbg=gray
+" endif
 
 "" encodings configure
 set fileencoding=utf-8
@@ -127,8 +140,15 @@ nmap <space>=: :Tabularize /:\zs<CR>
 vmap <space>=: :Tabularize /:\zs<CR>
 
 " for python
-Bundle 'hdima/python-syntax'
 let python_highlight_all = 1
 
 " for json
 let g:vim_json_warnings=0
+
+let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
