@@ -4,8 +4,8 @@ debian8 下编译vim8，并配置为Python开发环境
 ## 安装依赖
     sudo apt-get update
     sudo apt-get install sudo wget git python-dev python3-dev libncurses5-dev build-essential ctags cmake
-    curl https://bootstrap.pypa.io/get-pip.py | python
-    curl https://bootstrap.pypa.io/get-pip.py | python3
+    curl https://bootstrap.pypa.io/get-pip.py | sudo python
+    curl https://bootstrap.pypa.io/get-pip.py | sudo python3
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y nodejs
 

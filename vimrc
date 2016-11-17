@@ -13,7 +13,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'moll/vim-node'
 Bundle 'walm/jshint.vim'
-Bundle 'godlygeek/tabular'
 Bundle 'hdima/python-syntax'
 Bundle 'jelera/vim-javascript-syntax'
 "Bundle 'ternjs/tern_for_vim'
@@ -23,7 +22,8 @@ Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'jnurmine/Zenburn'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'bundle/Buffy.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,6 +97,11 @@ set incsearch
 hi IncSearch cterm=NONE ctermfg=NONE ctermbg=darkgrey
 hi Search cterm=NONE ctermfg=NONE ctermbg=darkgrey
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
+
+set completeopt=menuone,longest
+
 "" Cold Folding
 set foldmethod=indent
 set foldlevelstart=100
@@ -122,7 +127,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
 map <leader>c :SyntasticCheck<CR>
-map <leader>r :SyntasticReset<CR>
+map <leader>t :SyntasticReset<CR>
 
 let NERDTreeWinPos = 'right'
 let NERDTreeWinSize = 26
@@ -133,11 +138,6 @@ map tb :Tagbar<cr>
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 26
 let g:tagbar_left= 1
-
-nmap <space>= :Tabularize /=<CR>
-vmap <space>= :Tabularize /=<CR>
-nmap <space>=: :Tabularize /:\zs<CR>
-vmap <space>=: :Tabularize /:\zs<CR>
 
 " for python
 let python_highlight_all = 1
@@ -150,5 +150,4 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
+let g:jedi#show_call_signatures = "1"
