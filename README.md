@@ -9,8 +9,7 @@ debian8 下编译vim8，并配置为Python开发环境
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
-## 下载vim8 源码并解压
-    [地址](https://github.com/vim/vim/releases)
+## 下载vim8 源码并解压 [地址](https://github.com/vim/vim/releases)
     tar xf v8.0.xxxx.tar.gz && cd vim-8.0.xxxx/
 
 ## 编译vim8
