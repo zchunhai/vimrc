@@ -64,12 +64,12 @@ set encoding=utf-8
 set fileencodings=utf-8,latin1
 set fileformats=unix,dos,mac
 
-set ttymouse=xterm2
-set mouse=nv
-map <ScrollWheelUp> <C-Y>
-map <S-ScrollWheelUp> <C-U>
-map <ScrollWheelDown> <C-E>
-map <S-ScrollWheelDown> <C-D>
+"set ttymouse=xterm2
+"set mouse=nv
+"map <ScrollWheelUp> <C-Y>
+"map <S-ScrollWheelUp> <C-U>
+"map <ScrollWheelDown> <C-E>
+"map <S-ScrollWheelDown> <C-D>
 
 ""wildignore
 set wildmenu "Turn on WiLd menu
@@ -126,11 +126,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
+let g:syntastic_php_checkers = ['php']
 map <leader>c :SyntasticCheck<CR>
 map <leader>t :SyntasticReset<CR>
 
 let NERDTreeWinPos = 'right'
-let NERDTreeWinSize = 26
+let NERDTreeWinSize = 32
 map tr :NERDTreeToggle<cr>
 let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.gz$', '.*\.pyc', '.*\.gitignore', '.DS_Store']
 
@@ -138,6 +139,16 @@ map tb :Tagbar<cr>
 let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_width = 26
 let g:tagbar_left= 1
+let g:tagbar_type_php  = {
+    \ 'ctagstype' : 'php',
+    \ 'kinds'     : [
+        \ 'i:interfaces',
+        \ 'c:classes',
+        \ 'd:constant definitions',
+        \ 'f:functions',
+        \ 'j:javascript functions:1'
+  \ ]
+\ }
 
 " for python
 let python_highlight_all = 1
@@ -149,5 +160,6 @@ let g:airline_theme="luna"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#whitespace#enabled = 0
 
 let g:jedi#show_call_signatures = "1"
