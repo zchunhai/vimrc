@@ -24,6 +24,6 @@ debian8 下编译vim8，并配置为Python开发环境
 ## vimrc 安装步骤：
     sudo pip install Flake8
     npm install -g jshint
-    encho "source ~/.vim/vimrc" > ~/.vimrc
+    echo "source ~/.vim/vimrc" > ~/.vimrc
     git clone git@github.com:powerlang/vimrc.git ~/.vim
-    git submodule update --init --recursive
+<!-- git submodule update --init --recursive -->
