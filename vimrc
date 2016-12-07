@@ -23,7 +23,7 @@ Bundle 'jnurmine/Zenburn'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'bundle/Buffy.vim'
+Bundle 'mcmlxxxiii/Buffy.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
