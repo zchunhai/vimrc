@@ -2,28 +2,28 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Bundle 'altercation/vim-colors-solarized'
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'moll/vim-node'
-Bundle 'walm/jshint.vim'
-Bundle 'hdima/python-syntax'
-Bundle 'jelera/vim-javascript-syntax'
-"Bundle 'ternjs/tern_for_vim'
-Bundle 'vim-airline/vim-airline'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'gmarik/vundle'
+Plugin 'Shougo/unite.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'moll/vim-node'
+Plugin 'walm/jshint.vim'
+Plugin 'hdima/python-syntax'
+Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'ternjs/tern_for_vim'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Bundle 'yonchu/accelerated-smooth-scroll'
-Bundle 'jnurmine/Zenburn'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-fugitive'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'mcmlxxxiii/Buffy.vim'
+Plugin 'yonchu/accelerated-smooth-scroll'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mcmlxxxiii/Buffy.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

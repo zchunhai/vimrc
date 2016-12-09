@@ -25,5 +25,8 @@ debian8 下编译vim8，并配置为Python开发环境
     sudo pip install Flake8
     npm install -g jshint
     echo "source ~/.vim/vimrc" > ~/.vimrc
+    mkdir ~/.vim/swapfiles/
     git clone git@github.com:powerlang/vimrc.git ~/.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 <!-- git submodule update --init --recursive -->
