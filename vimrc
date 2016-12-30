@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'Shougo/unite.vim'
 Plugin 'scrooloose/syntastic'
@@ -126,7 +126,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
-let g:syntastic_php_checkers = ['php']
+let g:syntastic_php_checkers = ['php', 'phpmd']
+let g:syntastic_php_phpmd_post_args = $HOME . '/.vim/phpmd-rulesets/phpmd_ruleset.xml'
+
 map <leader>c :SyntasticCheck<CR>
 map <leader>t :SyntasticReset<CR>
 
