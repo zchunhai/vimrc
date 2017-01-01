@@ -5,6 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'gmarik/vundle'
 Plugin 'Shougo/unite.vim'
@@ -22,8 +23,10 @@ Plugin 'yonchu/accelerated-smooth-scroll'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'mcmlxxxiii/Buffy.vim'
+Plugin 'fatih/vim-go'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,11 +50,12 @@ set nu
 set nocursorline
 hi cursorline cterm=bold
 " disable bold font
+
 set t_md=
-
 set t_ti= t_te=
-
 set laststatus=2
+
+let g:indentLine_color_term = 239
 
 " if (exists('+colorcolumn'))
 "     set colorcolumn=120
@@ -121,7 +125,7 @@ nnoremap <leader><space> :<C-u>Unite -start-insert file_rec<cr>
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": [],
-    \ "passive_filetypes": ["python"] }
+    \ "passive_filetypes": ["python", "go", "php"] }
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
@@ -165,3 +169,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#whitespace#enabled = 0
 
 let g:jedi#show_call_signatures = "1"
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_list_type = "quickfix"
