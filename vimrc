@@ -7,9 +7,7 @@ call vundle#begin()
 
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'gmarik/vundle'
 Plugin 'Shougo/unite.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'moll/vim-node'
@@ -24,9 +22,10 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'davidhalter/jedi-vim'
-Plugin 'mcmlxxxiii/Buffy.vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
+Plugin 'w0rp/ale'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +53,7 @@ hi cursorline cterm=bold
 set t_md=
 set t_ti= t_te=
 set laststatus=2
+set nomodeline
 
 let g:indentLine_color_term = 239
 
@@ -112,29 +112,23 @@ set foldlevelstart=100
 set foldlevel=99
 
 "" Define custom indentation for filetypes
-autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript :setlocal sw=4 ts=4 sts=4
 autocmd FileType less :setlocal sw=2 ts=2 sts=2
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
 " unite conf
+nnoremap <leader>b :<C-u>Unite buffer<cr>
 nnoremap <leader>f :<C-u>Unite -start-insert file<cr>
 nnoremap <leader><space> :<C-u>Unite -start-insert file_rec<cr>
 
-" syntastic conf
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": ["python", "go", "php"] }
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = "--ignore=E402 --max-line-length=160"
-let g:syntastic_php_checkers = ['php', 'phpmd']
-let g:syntastic_php_phpmd_post_args = $HOME . '/.vim/phpmd-rulesets/phpmd_ruleset.xml'
+map <leader>c :ALEToggle<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_php_phpmd_ruleset = "design,naming,unusedcode"
+let g:ale_python_flake8_args = "--ignore=E402 --max-line-length=160"
 
-map <leader>c :SyntasticCheck<CR>
-map <leader>t :SyntasticReset<CR>
+nnoremap <leader>i :IndentLinesToggle<cr>
 
 let NERDTreeWinPos = 'right'
 let NERDTreeWinSize = 32
@@ -170,5 +164,6 @@ let g:airline#extensions#whitespace#enabled = 0
 
 let g:jedi#show_call_signatures = "1"
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_list_type = "quickfix"
+
+let g:ackprg = 'ag --vimgrep'
