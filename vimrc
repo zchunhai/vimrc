@@ -26,6 +26,7 @@ Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-dispatch'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -121,6 +122,7 @@ autocmd FileType json :setlocal sw=2 ts=2 sts=2
 nnoremap <leader>b :<C-u>Unite buffer<cr>
 nnoremap <leader>f :<C-u>Unite -start-insert file<cr>
 nnoremap <leader><space> :<C-u>Unite -start-insert file_rec<cr>
+nnoremap gf :sp<cr> yaw :<C-u>Unite -start-insert file_rec<cr><C-r>"<ESC>
 
 map <leader>c :ALEToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -166,4 +168,6 @@ let g:jedi#show_call_signatures = "1"
 
 let g:go_list_type = "quickfix"
 
+let g:ack_use_dispatch = 1
 let g:ackprg = 'ag --vimgrep'
+nnoremap <leader>/ * :Ack -w <C-r><C-w><cr>
