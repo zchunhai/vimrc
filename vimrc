@@ -27,6 +27,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-dispatch'
+Plugin 'uarun/vim-protobuf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -130,12 +131,15 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_php_phpmd_ruleset = "design,naming,unusedcode"
 let g:ale_python_flake8_args = "--ignore=E402 --max-line-length=160"
 
+let g:go_metalinter_deadline = "60s"
+let g:ale_linters = {'go': ['gometalinter']}
+
 nnoremap <leader>i :IndentLinesToggle<cr>
 
 let NERDTreeWinPos = 'right'
 let NERDTreeWinSize = 32
 map tr :NERDTreeToggle<cr>
-let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.gz$', '.*\.pyc', '.*\.gitignore', '.DS_Store']
+let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.gz$', '.*\.pyc', '.*\.gitignore', '.DS_Store', '__pycache__']
 
 map tb :Tagbar<cr>
 let g:tagbar_ctags_bin = 'ctags'
@@ -167,6 +171,10 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:jedi#show_call_signatures = "1"
 
 let g:go_list_type = "quickfix"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
 
 let g:ack_use_dispatch = 1
 let g:ackprg = 'ag --vimgrep'
