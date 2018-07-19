@@ -21,13 +21,14 @@ Plugin 'yonchu/accelerated-smooth-scroll'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'uarun/vim-protobuf'
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,6 +118,7 @@ set foldlevel=99
 autocmd FileType javascript :setlocal sw=4 ts=4 sts=4
 autocmd FileType less :setlocal sw=2 ts=2 sts=2
 autocmd FileType json :setlocal sw=2 ts=2 sts=2
+autocmd FileType yaml :setlocal sw=2 ts=2 sts=2
 
 " -------------------------------------
 " unite conf
@@ -129,7 +131,7 @@ map <leader>c :ALEToggle<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_php_phpmd_ruleset = "design,naming,unusedcode"
-let g:ale_python_flake8_args = "--ignore=E402 --max-line-length=160"
+let g:ale_python_flake8_options = "--ignore=E402,E128 --max-line-length=160"
 
 let g:go_metalinter_deadline = "60s"
 let g:ale_linters = {'go': ['gometalinter']}
@@ -153,6 +155,20 @@ let g:tagbar_type_php  = {
         \ 'd:constant definitions',
         \ 'f:functions',
         \ 'j:javascript functions:1'
+  \ ]
+\ }
+
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
   \ ]
 \ }
 
